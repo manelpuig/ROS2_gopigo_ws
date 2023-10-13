@@ -9,4 +9,8 @@ The objectives of this section are:
 
 ## **1. First connection to gopigo3**
 
-Follow instructions to create download and save the ROS2 environment to a 32GB SD card: https://github.com/slowrunner/ROS2-GoPiGo3/blob/main/Docs/INSTALL_FROM_IMAGE.md
+The main information related to gopigo3 is in:
+- https://github.com/slowrunner/rosbot-on-gopigo3/tree/main
+- https://github.com/slowrunner/ROS2-GoPiGo3/tree/main
+
+For the first test open the Document and follow instructions: https://github.com/slowrunner/ROS2-GoPiGo3/blob/main/Docs/Test_ROS2_GoPiGo3.md
