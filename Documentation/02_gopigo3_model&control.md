@@ -167,9 +167,9 @@ ament_package()
 ```xml
 <launch>
     <let name="urdf_path" 
-         value="$(find-pkg-share robot_description)/urdf/my_robot.urdf.xacro" />
+         value="$(find-pkg-share robot_description)/urdf/gopigo3rp.urdf" />
     <let name="rviz_config_path"
-         value="$(find-pkg-share robot_bringup)/rviz/urdf_config.rviz" />
+         value="$(find-pkg-share robot_bringup)/rviz/urdf_base_config.rviz" />
 
     <node pkg="robot_state_publisher" exec="robot_state_publisher">
         <param name="robot_description"
@@ -195,13 +195,15 @@ ament_package()
   <exec_depend>gazebo_ros</exec_depend>
 ...
 ```
+- Create also a "urdf_config.rviz" file in rviz folder
 - Now you can compile again
 ```shell
 colcon build
+source install/setup.bash
 ```
 You can now bringup your robot in the designed world
 ```shell
-ros2 launch my_robot_bringup my_robot_gazebo.launch.xml
+ros2 launch robot_bringup gopigo3rp_gazebo.launch.xml
 ```
 
 **Activity:**
