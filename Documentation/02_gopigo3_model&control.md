@@ -1,4 +1,4 @@
-## **2. ROS2 gopigo3 model and Control2**
+## **2. ROS2 gopigo3 model and Control**
 The objective of this section is to simulate the gopigo3 behaviour in virtual environment.
 
 The objectives of this section are:
@@ -100,31 +100,38 @@ ros2 launch robot_description display.launch.py
 
 ### **2.2. Create a robot model**
 
-A first "my_robot.urdf" file is delivered to display a first robot model in rviz program.
+A first "gpgMin.urdf" file is delivered to display a first robot model in rviz program.
 
-For a more complete robot model, it is suggested to use xacro format. This format will help you to better organize and scale your model with more functionalities.
+For a more complete robot model "gopigo3rp.urdf", we will add:
+- Geometry within meshes folder
+- gazebo plugins
 
-The gazebo functionalities are defined with plugins:
-- https://classic.gazebosim.org/tutorials?tut=ros_gzplugins
-- https://github.com/ros-simulation/gazebo_ros_pkgs/tree/ros2/gazebo_plugins/include/gazebo_plugins
+Because we have added a folder "meshes" we have to install it in CMakeLists.txt in line:
+```shell
+...
+install(
+  DIRECTORY urdf launch rviz meshes
+  DESTINATION share/${PROJECT_NAME}/
+)
+...
+```
 
-If you are using OpenCV, the frame used for the camera has a different orientation and you have to add a new link. This is explained and solved in:
-- https://answers.ros.org/question/232534/gazebo-camera-frame-is-inconsistent-with-rviz-opencv-convention/
-
-The complete "my_robot.urdf.xacro" is composed by different files:
-- my_robot.urdf.xacro (the main one)
-- mobile_base.xacro (with links and joints)
-- common_properties.xacro (with material and inertia properties)
-- mobile_base_gazebo.xacro (with differential_drive gazebo plugin)
-- camera.xacro (with camera plugin)
-
-The robot model defined in xacro format, can be displayed using the same launch files, you have only to change the name of robot model to "my_robot.urdf.xacro", in launch file:
+The robot model is specified by "gopigo3rp.urdf", in launch file:
 ```xml
 ...
 <let name="urdf_path" 
-     value="$(find-pkg-share robot_description)/urdf/my_robot.urdf.xacro" />
+     value="$(find-pkg-share robot_description)/urdf/gopigo3rp.urdf" />
 ...
 ```
+- open a new terminal and type
+```shell
+colcon build
+source install/setup.bash
+ros2 launch robot_description display.launch.xml
+```
+![](./Images/02_Model/02_gopigo3rp_rviz.png)
+
+>You will see the new robot model
 
 ### **2.3. Create a new robot_bringup package**
 

@@ -1,0 +1,35 @@
+[0.100s] Invoking command in '/home/ROS2_gopigo_ws/build/robot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ROS2_rUBot_ws/install/rubot_description:/home/ROS2_rUBot_ws/install/rubot_control:/home/ROS2_rUBot_ws/install/ros2_tutorial:/opt/ros/humble /usr/bin/cmake --build /home/ROS2_gopigo_ws/build/robot_description -- -j8 -l8
+[0.720s] -- Found ament_cmake: 1.3.5 (/opt/ros/humble/share/ament_cmake/cmake)
+[1.492s] -- Configuring done
+[1.528s] -- Generating done
+[1.529s] -- Build files have been written to: /home/ROS2_gopigo_ws/build/robot_description
+[1.602s] Invoked command in '/home/ROS2_gopigo_ws/build/robot_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ROS2_rUBot_ws/install/rubot_description:/home/ROS2_rUBot_ws/install/rubot_control:/home/ROS2_rUBot_ws/install/ros2_tutorial:/opt/ros/humble /usr/bin/cmake --build /home/ROS2_gopigo_ws/build/robot_description -- -j8 -l8
+[1.852s] Invoking command in '/home/ROS2_gopigo_ws/build/robot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ROS2_rUBot_ws/install/rubot_description:/home/ROS2_rUBot_ws/install/rubot_control:/home/ROS2_rUBot_ws/install/ros2_tutorial:/opt/ros/humble /usr/bin/cmake --install /home/ROS2_gopigo_ws/build/robot_description
+[1.880s] -- Install configuration: ""
+[1.880s] -- Up-to-date: /home/ROS2_gopigo_ws/install/robot_description/share/robot_description//urdf
+[1.880s] -- Up-to-date: /home/ROS2_gopigo_ws/install/robot_description/share/robot_description//urdf/gpgMin.urdf
+[1.880s] -- Installing: /home/ROS2_gopigo_ws/install/robot_description/share/robot_description//urdf/gopigo3rp.urdf
+[1.880s] -- Up-to-date: /home/ROS2_gopigo_ws/install/robot_description/share/robot_description//urdf/gopigoMinimal.urdf
+[1.881s] -- Up-to-date: /home/ROS2_gopigo_ws/install/robot_description/share/robot_description//urdf/keith_gpg.urdf
+[1.881s] -- Up-to-date: /home/ROS2_gopigo_ws/install/robot_description/share/robot_description//urdf/gopigo3.urdf
+[1.881s] -- Up-to-date: /home/ROS2_gopigo_ws/install/robot_description/share/robot_description//launch
+[1.881s] -- Up-to-date: /home/ROS2_gopigo_ws/install/robot_description/share/robot_description//launch/display.launch.py
+[1.882s] -- Installing: /home/ROS2_gopigo_ws/install/robot_description/share/robot_description//launch/display.launch.xml
+[1.882s] -- Up-to-date: /home/ROS2_gopigo_ws/install/robot_description/share/robot_description//rviz
+[1.882s] -- Up-to-date: /home/ROS2_gopigo_ws/install/robot_description/share/robot_description//rviz/urdf_base_config.rviz
+[1.882s] -- Installing: /home/ROS2_gopigo_ws/install/robot_description/share/ament_index/resource_index/package_run_dependencies/robot_description
+[1.883s] -- Installing: /home/ROS2_gopigo_ws/install/robot_description/share/ament_index/resource_index/parent_prefix_path/robot_description
+[1.883s] -- Installing: /home/ROS2_gopigo_ws/install/robot_description/share/robot_description/environment/ament_prefix_path.sh
+[1.883s] -- Installing: /home/ROS2_gopigo_ws/install/robot_description/share/robot_description/environment/ament_prefix_path.dsv
+[1.883s] -- Installing: /home/ROS2_gopigo_ws/install/robot_description/share/robot_description/environment/path.sh
+[1.884s] -- Installing: /home/ROS2_gopigo_ws/install/robot_description/share/robot_description/environment/path.dsv
+[1.884s] -- Installing: /home/ROS2_gopigo_ws/install/robot_description/share/robot_description/local_setup.bash
+[1.884s] -- Installing: /home/ROS2_gopigo_ws/install/robot_description/share/robot_description/local_setup.sh
+[1.884s] -- Installing: /home/ROS2_gopigo_ws/install/robot_description/share/robot_description/local_setup.zsh
+[1.884s] -- Installing: /home/ROS2_gopigo_ws/install/robot_description/share/robot_description/local_setup.dsv
+[1.884s] -- Installing: /home/ROS2_gopigo_ws/install/robot_description/share/robot_description/package.dsv
+[1.884s] -- Installing: /home/ROS2_gopigo_ws/install/robot_description/share/ament_index/resource_index/packages/robot_description
+[1.885s] -- Installing: /home/ROS2_gopigo_ws/install/robot_description/share/robot_description/cmake/robot_descriptionConfig.cmake
+[1.885s] -- Installing: /home/ROS2_gopigo_ws/install/robot_description/share/robot_description/cmake/robot_descriptionConfig-version.cmake
+[1.885s] -- Up-to-date: /home/ROS2_gopigo_ws/install/robot_description/share/robot_description/package.xml
+[1.885s] Invoked command in '/home/ROS2_gopigo_ws/build/robot_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ROS2_rUBot_ws/install/rubot_description:/home/ROS2_rUBot_ws/install/rubot_control:/home/ROS2_rUBot_ws/install/ros2_tutorial:/opt/ros/humble /usr/bin/cmake --install /home/ROS2_gopigo_ws/build/robot_description
