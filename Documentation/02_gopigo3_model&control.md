@@ -1,4 +1,4 @@
-## **2. ROS2 gopigo3 model and Control**
+## **2. ROS2 gopigo3 model and Control2**
 The objective of this section is to simulate the gopigo3 behaviour in virtual environment.
 
 The objectives of this section are:
