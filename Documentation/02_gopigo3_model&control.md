@@ -7,7 +7,10 @@ The objectives of this section are:
 - Create a complete robot model
 - Spawn the robot model in a proper virtual world in gazebo environment
 
-A very good guide is deescribed in: https://www.udemy.com/course/ros2-tf-urdf-rviz-gazebo/learn/lecture/38688920#overview
+A very good guide is deescribed in:
+- https://www.udemy.com/course/ros2-tf-urdf-rviz-gazebo/learn/lecture/38688920#overview
+- URDF for Robot Modeling in ROS2: https://app.theconstructsim.com/courses/83 
+- https://www.youtube.com/watch?v=mDS_M95MQGA
 
 ## **2.1. First connection to gopigo3**
 
