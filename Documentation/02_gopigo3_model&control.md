@@ -163,25 +163,33 @@ install(
 
 ament_package()
 ```
-- create a new "my_robot_gazebo.launch.xml"
+- Modify the previous model "gpgMin_rviz.urdf" to include the "colision" and "inertial" properties. Save it with name "gpgMin_gazebo.urdf". These properties are needed to visualize in gazebo!. The models created are:
+    - gpgMin_rviz.urdf (with visual properties --> for rviz only)
+    - gpgMin_gazebo.urdf (with visual, colision and inertial properties --> for rviz and gazebo)
+    - gopigo3_fromXacro.urdf: automatically generated from xacro files
+    - gopigo3rp.urdf: manually generated
+    - my_robot.urdf: differential drive robot with arm
+- create a new "gpgMin_urdf_gazebo.launch.xml" to spawn the minimum robot model. 
 ```xml
 <launch>
     <let name="urdf_path" 
-         value="$(find-pkg-share robot_description)/urdf/gopigo3rp.urdf" />
+         value="$(find-pkg-share robot_description)/urdf/gpgMin_gazebo.urdf" />
     <let name="rviz_config_path"
-         value="$(find-pkg-share robot_bringup)/rviz/urdf_base_config.rviz" />
+         value="$(find-pkg-share robot_bringup)/rviz/urdf_base_footprint_config.rviz" />
 
-    <node pkg="robot_state_publisher" exec="robot_state_publisher">
+    <node pkg="joint_state_publisher" exec="joint_state_publisher" />
+
+     <node pkg="robot_state_publisher" exec="robot_state_publisher">
         <param name="robot_description"
                value="$(command 'xacro $(var urdf_path)')" />
     </node>
 
     <include file="$(find-pkg-share gazebo_ros)/launch/gazebo.launch.py">
-     <arg name="world" value="$(find-pkg-share robot_bringup)/worlds/test_world.world" />
+     <arg name="world" value="$(find-pkg-share robot_bringup)/worlds/square.world" />
     </include>
 
     <node pkg="gazebo_ros" exec="spawn_entity.py"
-          args="-topic robot_description -entity my_robot" />
+          args="-topic robot_description -entity gopigo3" />
 
     <node pkg="rviz2" exec="rviz2" output="screen" 
           args="-d $(var rviz_config_path)" />
@@ -203,9 +211,15 @@ source install/setup.bash
 ```
 You can now bringup your robot in the designed world
 ```shell
-ros2 launch robot_bringup gopigo3rp_gazebo.launch.xml
+ros2 launch robot_bringup gpgMin_urdf_gazebo.launch.xml
 ```
+
+![](./Images/02_Model/03_gpgMin_gazebo.png)
+
+>There are not colors because these are not defined. We will need to add the gazebo color definition.
+
+>**Important!:** In ROS2 gazebo is only able to visualize simple shapes (box, cilynder and sphere). If you need meshes, a sdf format will be needed.
 
 **Activity:**
 
-Bringup your rUBot model within the real custom designed World
+Bringup your gopigo3.urdf model within the real custom designed World

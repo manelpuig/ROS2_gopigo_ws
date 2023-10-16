@@ -1,0 +1,122 @@
+<?xml version='1.0'?>
+<robot name="gpgMin">
+  <!-- ============ 'base_footprint' is the ground link ===================== -->
+  <link name="base_footprint"/>
+
+  <!-- Base Link -->
+  <link name="base_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+          <box size="0.22 0.104 0.070"/>
+      </geometry>
+      <material name="blue">
+        <color rgba="0 0.5 1 0.5"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.22 0.104 0.070"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.1"/>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0.1"/>
+      <mass value="5.0"/>
+      <inertia ixx="0.6666666666666667" ixy="0" ixz="0" iyy="0.8666666666666667" iyz="0" izz="0.3333333333333334"/>
+    </inertial>
+  </link>
+
+  <!-- Base Link -->
+  <link name="caster">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <sphere radius="0.02" />
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <sphere radius="0.02"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.5"/>
+      <inertia ixx="0.0020000000000000005" ixy="0" ixz="0" iyy="0.0020000000000000005" iyz="0" izz="0.0020000000000000005"/>
+    </inertial>
+  </link>
+  <!-- ============   -->
+  <joint name="base_joint" type="fixed">
+    <parent link="base_footprint"/>
+    <child link="base_link"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+  <joint name="caster_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="caster"/>
+    <origin xyz="-0.1 0 -0.045" rpy="0 0 0" />
+  </joint>
+
+  <!-- Right Wheel -->
+  <link name="right_wheel">
+    <visual>
+      <origin xyz="0 0 0" rpy="1.570795 0 0" />
+      <geometry>
+          <cylinder length="0.025" radius="0.0325" />
+      </geometry>
+      <material name="black">
+        <color rgba="0.05 0.05 0.05 0.5"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.025" radius="0.0325" />
+      </geometry>
+      <origin rpy="1.5707963267948966 0 0" xyz="0 0 0"/>
+    </collision>
+    <inertial>
+      <origin rpy="1.5707963267948966 0 0" xyz="0 0 0"/>
+      <mass value="1.0"/>
+      <inertia ixx="0.010833333333333335" ixy="0" ixz="0" iyy="0.010833333333333335" iyz="0" izz="0.020000000000000004"/>
+    </inertial>
+  </link>
+
+  <joint name="joint_right_wheel" type="continuous">
+    <parent link="base_link"/>
+    <child link="right_wheel"/>
+    <origin xyz="0.020 -0.058 -0.035" rpy="0 0 0" /> 
+    <axis xyz="0 1 0" />
+  </joint>
+
+  <!-- Left Wheel -->
+  <link name="left_wheel">
+    <visual>
+      <origin xyz="0 0 0" rpy="1.570795 0 0" />
+      <geometry>
+          <cylinder length="0.025" radius="0.0325" />
+      </geometry>
+      <material name="black"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.025" radius="0.0325" />
+      </geometry>
+      <origin rpy="1.5707963267948966 0 0" xyz="0 0 0"/>
+    </collision>
+    <inertial>
+      <origin rpy="1.5707963267948966 0 0" xyz="0 0 0"/>
+      <mass value="1.0"/>
+      <inertia ixx="0.010833333333333335" ixy="0" ixz="0" iyy="0.010833333333333335" iyz="0" izz="0.020000000000000004"/>
+    </inertial>
+  </link>
+  
+  <joint name="joint_left_wheel" type="continuous">
+    <parent link="base_link"/>
+    <child link="left_wheel"/>
+    <origin xyz="0.020 0.058 -0.035" rpy="0 0 0" /> 
+    <axis xyz="0 1 0" />
+  </joint>
+  
+</robot>
